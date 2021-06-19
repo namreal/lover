@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2021 at 04:14 AM
+-- Generation Time: Jun 19, 2021 at 04:52 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -81,7 +81,8 @@ CREATE TABLE `thu` (
 INSERT INTO `thu` (`id`, `date`, `moneys`, `note`) VALUES
 (2, '2021-05-29', 200000, 'Mua đồ ăn cho 2 ngày cuối tuần'),
 (4, '2021-05-28', 20000000, 'Lĩnh lương tháng 6'),
-(5, '2021-06-18', 1886000, 'Tiền ăn tháng 6');
+(5, '2021-06-18', 1886000, 'Tiền ăn tháng 6'),
+(6, '2021-06-19', 25000, 'Mua bánh đa');
 
 -- --------------------------------------------------------
 
@@ -93,15 +94,17 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `pass` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `phone` int(10) NOT NULL
+  `phone` int(10) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `email`, `pass`, `phone`) VALUES
-(1, 'admin', 'admin', 0);
+INSERT INTO `user` (`id`, `email`, `pass`, `phone`, `name`) VALUES
+(1, 'admin', 'admin', 0, ''),
+(2, 'test@gmail.com', '628a7453e405381ff6bf9e3a2c4cf396', 0, 'Test 2025');
 
 --
 -- Indexes for dumped tables
@@ -151,13 +154,13 @@ ALTER TABLE `cmt`
 -- AUTO_INCREMENT for table `thu`
 --
 ALTER TABLE `thu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
